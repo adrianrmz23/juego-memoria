@@ -172,6 +172,14 @@ resetGame.addEventListener("click", function (e) {
 function iniciarCronometro() {
     intervalo = setInterval(function () {
         tiempo++;
-        timer.innerHTML = tiempo;
+
+        const minutos = Math.floor(tiempo / 60);
+        const segundos = tiempo % 60;
+
+        timer.innerHTML =
+            String(minutos).padStart(2, '0') +
+            ':' +
+            String(segundos).padStart(2, '0');
+
     }, 1000);
 }
