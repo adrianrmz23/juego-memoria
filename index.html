@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de memoria</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+
+        .preserve-3d {
+            transform-style: preserve-3d;
+        }
+
+        .backface-hidden {
+            backface-visibility: hidden;
+        }
+
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+
+        .is-flipped {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 min-h-screen flex flex-col items-center justify-center p-4">
+
+    <div class="mb-8 text-center">
+        <h1 class="text-4xl font-bold tracking-widest text-indigo-400 mb-2">JUEGO DE MEMORIA</h1>
+        <p class="text-slate-400 uppercase text-xs tracking-[0.2em]">Movimientos: <span id="moves"
+                class="text-white font-bold">0</span></p>
+        <p class="text-slate-400 uppercase text-xs tracking-[0.2em]">
+            Tiempo: <span id="timer" class="text-indigo-300 font-mono font-bold">00:00</span>
+        </p>
+    </div>
+
+    <div class="max-w-[500px] w-full mx-auto aspect-square">
+        <div id="game-board" class="grid grid-cols-4 gap-3 w-full h-full">
+        </div>
+    </div>
+
+    <button id="resetGame"
+        class="mt-10 px-8 py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold transition-all transform active:scale-95 shadow-lg shadow-indigo-500/20 hover:cursor-pointer">
+        Reiniciar Juego
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
